@@ -13,6 +13,70 @@
         android:theme="@style/Theme.CarShare"
         tools:targetApi="31">
         <activity
+            android:name=".BookingConfirmationActivity"
+            android:exported="false"
+            android:label="Booking Confirmation">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".BookingOverviewActivity"
+            android:exported="false"
+            android:label="Booking Overview">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".CarDetailsActivity"
+            android:exported="false"
+            android:label="Car Details">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ResultsActivity"
+            android:exported="false"
+            android:label="Results">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:label="Search">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".BookingHistoryActivity"
+            android:exported="false"
+            android:label="Booking History">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="Login">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:label="Sign Up">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

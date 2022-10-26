@@ -4,34 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SignUpActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
-        android:background="@drawable/ic_launcher_background"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/gl_h_50sp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        app:layout_constraintTop_toBottomOf="@id/gl_h_25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:layout_margin="33dp"
+        android:autofillHints="emailAddress" />
 
-    <Button
-        android:id="@+id/b_login"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        app:layout_constraintTop_toBottomOf="@id/gl_h_50sp"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="33dp"/>
+        android:layout_margin="33dp"
+        android:autofillHints="password" />
+
+    <EditText
+        android:id="@+id/et_confirm_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/confirm_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="33dp"
+        android:autofillHints="password" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
-        app:layout_constraintTop_toBottomOf="@id/b_login"
+        app:layout_constraintTop_toBottomOf="@id/et_confirm_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="33dp"/>
