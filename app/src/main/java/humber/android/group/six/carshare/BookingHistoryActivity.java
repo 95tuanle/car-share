@@ -15,9 +15,7 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.rv_booking);
 
-        Booking booking = new Booking();
-
-        BookingHistoryAdapter bookingHistoryAdapter = new BookingHistoryAdapter(booking.createDummyBookings());
+        BookingHistoryAdapter bookingHistoryAdapter = new BookingHistoryAdapter(new Booking().createDummyBookings());
 
         recyclerView.setAdapter(bookingHistoryAdapter);
 
