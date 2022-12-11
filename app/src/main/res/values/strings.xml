@@ -15,6 +15,7 @@
     <string name="book">Book</string>
     <string name="booking_details">Car model: Ford Model T\nPickup address: CN Tower\nPickup date: Oct 30th, 2022\nDrop-off date: Nov 11th, 2022</string>
     <string name="your_bookings">Your Bookings</string>
+    <string name="todo">TODO</string>
     <string-array name="car_models_array">
         <item>Ford Model T</item>
         <item>Volkswagen Beetle</item>

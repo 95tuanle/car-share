@@ -12,7 +12,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="33dp"/>
+        android:layout_margin="33dp"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/tv_booking"

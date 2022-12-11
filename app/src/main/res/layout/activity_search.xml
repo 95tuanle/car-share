@@ -10,51 +10,58 @@
         android:id="@+id/s_car_model"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/gl_h_25sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="33dp"
+        android:contentDescription="@android:string/untitled"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="33dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gl_h_25sp" />
 
     <EditText
         android:id="@+id/et_pickup_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:hint="@string/pickup_address"
-        app:layout_constraintTop_toBottomOf="@+id/s_car_model"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="33dp"
-        android:autofillHints="postalAddress" />
+        android:autofillHints="postalAddress"
+        android:hint="@string/pickup_address"
+        android:inputType="textPostalAddress"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s_car_model" />
 
     <Button
         android:id="@+id/b_pickup_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="33dp"
         android:text="@string/pickup_date"
-        app:layout_constraintTop_toBottomOf="@id/et_pickup_location"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="33dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_pickup_location" />
 
     <Button
         android:id="@+id/b_drop_off_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="33dp"
         android:text="@string/drop_off_date"
-        app:layout_constraintTop_toBottomOf="@id/b_pickup_date"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="33dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/b_pickup_date" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="33dp"
         android:text="@string/search"
-        app:layout_constraintTop_toBottomOf="@+id/b_drop_off_date"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="33dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_drop_off_date" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_25ps"
