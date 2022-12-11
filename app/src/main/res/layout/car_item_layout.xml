@@ -7,14 +7,14 @@
 
     <ImageView
         android:id="@+id/iv_car"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/gl_v_25ps"
-        app:layout_constraintTop_toTopOf="@id/gl_h_25sp"
-        app:layout_constraintBottom_toBottomOf="@id/gl_h_75sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="33dp"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"/>
 
     <TextView
         android:id="@+id/tv_car"
@@ -23,6 +23,8 @@
         app:layout_constraintStart_toEndOf="@id/gl_v_25ps"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:maxLines="3"
+        android:lines="4"
         android:layout_margin="33dp"/>
 
     <androidx.constraintlayout.widget.Guideline

@@ -1,6 +1,5 @@
 package humber.android.group.six.carshare.controllers.adapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,9 +34,8 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.getTextView().setText(String.format("%s %s", cars.get(position).manufacturer, cars.get(position).model));
-        ImageView imageView = holder.getImageView();
-        new DownloadImageTask(imageView).execute(cars.get(position).image);
+        holder.getTextView().setText(String.format("%s %s\nDaily rate: %s\n%s", cars.get(position).manufacturer, cars.get(position).model, cars.get(position).dailyRate, cars.get(position).availableForm.toString()));
+        new DownloadImageTask(holder.getImageView()).execute(cars.get(position).image);
     }
 
     @Override
