@@ -12,7 +12,6 @@ import humber.android.group.six.carshare.daos.CarDao;
 import humber.android.group.six.carshare.daos.UserDao;
 import humber.android.group.six.carshare.models.Booking;
 import humber.android.group.six.carshare.models.Car;
-import humber.android.group.six.carshare.models.Converters;
 import humber.android.group.six.carshare.models.User;
 
 @Database(entities = {User.class, Car.class, Booking.class}, version = 1, exportSchema = false)

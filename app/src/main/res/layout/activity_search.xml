@@ -7,40 +7,56 @@
     tools:context=".controllers.SearchActivity">
 
 
-    <EditText
-        android:id="@+id/et_pickup_location"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/f_pickup_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="33dp"
         android:autofillHints="postalAddress"
-        android:hint="@string/pickup_address"
         android:inputType="textPostalAddress"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gl_h_25sp" />
+        app:layout_constraintTop_toBottomOf="@+id/gl_h_25sp"
+        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pickup_date"
+        android:layout_margin="33dp"
+        app:layout_constraintEnd_toStartOf="@id/gl_v_50ps"
+        app:layout_constraintTop_toBottomOf="@id/f_pickup_location" />
 
     <Button
         android:id="@+id/b_pickup_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="33dp"
-        android:text="@string/pickup_date"
+        android:contentDescription="@string/pickup_date"
+        android:onClick="pickupDate"
         android:textColor="#3E2723"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_pickup_location" />
+        app:layout_constraintStart_toEndOf="@id/gl_v_50ps"
+        app:layout_constraintTop_toBottomOf="@id/f_pickup_location" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drop_off_date"
+        android:layout_margin="33dp"
+        app:layout_constraintEnd_toStartOf="@id/gl_v_50ps"
+        app:layout_constraintTop_toBottomOf="@id/b_pickup_date" />
 
     <Button
         android:id="@+id/b_drop_off_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="33dp"
-        android:text="@string/drop_off_date"
+        android:contentDescription="@string/drop_off_date"
+        android:onClick="dropOffDate"
         android:textColor="#3E2723"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl_v_50ps"
         app:layout_constraintTop_toBottomOf="@id/b_pickup_date" />
 
     <Button
@@ -51,7 +67,8 @@
         android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b_drop_off_date" />
+        app:layout_constraintTop_toBottomOf="@+id/b_drop_off_date"
+        android:onClick="search"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_25ps"

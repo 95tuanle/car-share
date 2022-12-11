@@ -7,11 +7,12 @@
 
     <ImageView
         android:id="@+id/iv_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl_v_25ps"
+        app:layout_constraintTop_toTopOf="@id/gl_h_25sp"
+        app:layout_constraintBottom_toBottomOf="@id/gl_h_75sp"
         android:layout_margin="33dp"
         android:contentDescription="@string/todo" />
 
@@ -19,8 +20,50 @@
         android:id="@+id/tv_car"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/iv_car"
+        app:layout_constraintStart_toEndOf="@id/gl_v_25ps"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="33dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_v_25ps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_v_50ps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_v_75ps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gl_h_25sp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gl_h_50sp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gl_h_75sp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

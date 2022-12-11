@@ -1,4 +1,4 @@
-package humber.android.group.six.carshare.models;
+package humber.android.group.six.carshare;
 
 import androidx.room.TypeConverter;
 

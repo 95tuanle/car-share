@@ -12,14 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import humber.android.group.six.carshare.CarDummy;
+import humber.android.group.six.carshare.DownloadImageTask;
 import humber.android.group.six.carshare.R;
+import humber.android.group.six.carshare.models.Car;
 
 public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHolder> {
-    private final List<CarDummy> carDummies;
 
-    public ResultsAdapter(List<CarDummy> carDummies) {
-        this.carDummies = carDummies;
+    private final List<Car> cars;
+
+    public ResultsAdapter(List<Car> cars) {
+        this.cars = cars;
     }
 
     @NonNull
@@ -32,16 +34,15 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ResultsAdapter.ViewHolder holder, int position) {
-        holder.getTextView().setText(carDummies.get(position).getSummary());
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.getTextView().setText(String.format("%s %s", cars.get(position).manufacturer, cars.get(position).model));
         ImageView imageView = holder.getImageView();
-        Context context = imageView.getContext();
-        imageView.setImageResource(context.getResources().getIdentifier(carDummies.get(position).getImage(), "drawable", context.getPackageName()));
+        new DownloadImageTask(imageView).execute(cars.get(position).image);
     }
 
     @Override
     public int getItemCount() {
-        return carDummies.size();
+        return cars.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

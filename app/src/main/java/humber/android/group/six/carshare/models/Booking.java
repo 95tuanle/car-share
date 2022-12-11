@@ -11,13 +11,17 @@ public class Booking {
     @PrimaryKey(autoGenerate = true)
     public int bid;
 
+    @ColumnInfo(name = "pickup_date")
+    public Date pickupDate;
+
     @ColumnInfo(name = "drop_off_date")
     public Date dropOffDate;
 
     public int cid;
     public int uid;
 
-    public Booking(Date dropOffDate, int cid, int uid) {
+    public Booking(Date pickupDate, Date dropOffDate, int cid, int uid) {
+        this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
         this.cid = cid;
         this.uid = uid;

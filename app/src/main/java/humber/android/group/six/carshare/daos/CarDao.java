@@ -4,6 +4,8 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import java.util.List;
+
 import humber.android.group.six.carshare.models.Car;
 
 
@@ -14,4 +16,7 @@ public interface CarDao {
 
     @Insert()
     void insertCar(Car car);
+
+    @Query("SELECT * FROM car WHERE is_available = 1")
+    List<Car> findAvailableCars();
 }
