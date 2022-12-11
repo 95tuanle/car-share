@@ -1,4 +1,4 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ResultsAdapter  extends RecyclerView.Adapter<ResultsAdapter.ViewHolder> {
+import humber.android.group.six.carshare.CarDummy;
+import humber.android.group.six.carshare.R;
+
+public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHolder> {
     private final List<CarDummy> carDummies;
 
     public ResultsAdapter(List<CarDummy> carDummies) {

@@ -1,10 +1,14 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import humber.android.group.six.carshare.CarDummy;
+import humber.android.group.six.carshare.R;
+import humber.android.group.six.carshare.controllers.adapters.ResultsAdapter;
 
 public class ResultsActivity extends AppCompatActivity {
 

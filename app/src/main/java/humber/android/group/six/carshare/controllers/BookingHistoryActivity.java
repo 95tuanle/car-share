@@ -1,10 +1,14 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import humber.android.group.six.carshare.BookingDummy;
+import humber.android.group.six.carshare.controllers.adapters.BookingHistoryAdapter;
+import humber.android.group.six.carshare.R;
 
 public class BookingHistoryActivity extends AppCompatActivity {
 
@@ -15,7 +19,7 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.rv_booking);
 
-        BookingHistoryAdapter bookingHistoryAdapter = new BookingHistoryAdapter(new Booking().createDummyBookings());
+        BookingHistoryAdapter bookingHistoryAdapter = new BookingHistoryAdapter(new BookingDummy().createDummyBookings());
 
         recyclerView.setAdapter(bookingHistoryAdapter);
 

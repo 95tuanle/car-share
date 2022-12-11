@@ -1,10 +1,12 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import humber.android.group.six.carshare.R;
 
 public class MainActivity extends AppCompatActivity {
 

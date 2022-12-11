@@ -1,9 +1,10 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.daos;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
+import humber.android.group.six.carshare.models.User;
 
 @Dao
 public interface UserDao {

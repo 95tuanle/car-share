@@ -1,10 +1,12 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import humber.android.group.six.carshare.R;
 
 public class LoginSignUpActivity extends AppCompatActivity {
 

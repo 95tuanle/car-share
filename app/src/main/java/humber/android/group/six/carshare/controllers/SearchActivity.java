@@ -1,4 +1,4 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import humber.android.group.six.carshare.R;
 
 public class SearchActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 

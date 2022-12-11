@@ -1,8 +1,10 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import humber.android.group.six.carshare.R;
 
 public class BookingOverviewActivity extends AppCompatActivity {
 

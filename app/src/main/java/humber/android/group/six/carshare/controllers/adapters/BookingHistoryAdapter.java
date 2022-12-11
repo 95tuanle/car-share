@@ -1,4 +1,4 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import humber.android.group.six.carshare.BookingDummy;
+import humber.android.group.six.carshare.R;
+
 public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAdapter.ViewHolder>{
-    private final List<Booking> bookings;
+    private final List<BookingDummy> bookingDummies;
 
     @NonNull
     @Override
@@ -26,15 +29,15 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
     @Override
     public void onBindViewHolder(@NonNull BookingHistoryAdapter.ViewHolder holder, int position) {
-        holder.getTextView().setText(bookings.get(position).getSummary());
+        holder.getTextView().setText(bookingDummies.get(position).getSummary());
         ImageView imageView = holder.getImageView();
         Context context = imageView.getContext();
-        imageView.setImageResource(context.getResources().getIdentifier(bookings.get(position).getImage(), "drawable", context.getPackageName()));
+        imageView.setImageResource(context.getResources().getIdentifier(bookingDummies.get(position).getImage(), "drawable", context.getPackageName()));
     }
 
     @Override
     public int getItemCount() {
-        return bookings.size();
+        return bookingDummies.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -57,7 +60,7 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
         }
     }
 
-    public BookingHistoryAdapter(List<Booking> bookings) {
-        this.bookings = bookings;
+    public BookingHistoryAdapter(List<BookingDummy> bookingDummies) {
+        this.bookingDummies = bookingDummies;
     }
 }

@@ -1,4 +1,4 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Locale;
+
+import humber.android.group.six.carshare.AppDatabase;
+import humber.android.group.six.carshare.R;
+import humber.android.group.six.carshare.daos.UserDao;
+import humber.android.group.six.carshare.models.User;
 
 public class LoginActivity extends AppCompatActivity {
 

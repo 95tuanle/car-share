@@ -6,7 +6,14 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, Car.class}, version = 1, exportSchema = false)
+import humber.android.group.six.carshare.daos.BookingDao;
+import humber.android.group.six.carshare.daos.CarDao;
+import humber.android.group.six.carshare.daos.UserDao;
+import humber.android.group.six.carshare.models.Booking;
+import humber.android.group.six.carshare.models.Car;
+import humber.android.group.six.carshare.models.User;
+
+@Database(entities = {User.class, Car.class, Booking.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase appDatabase;
     public static AppDatabase getInstance(Context context) {
@@ -16,4 +23,6 @@ public abstract class AppDatabase extends RoomDatabase {
         return appDatabase;
     }
     public abstract UserDao userDao();
+    public abstract CarDao carDao();
+    public abstract BookingDao bookingDao();
 }

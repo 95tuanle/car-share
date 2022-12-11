@@ -3,16 +3,16 @@ package humber.android.group.six.carshare;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Booking {
+public class BookingDummy {
     String summary;
     String image;
 
-    public Booking(String summary, String image) {
+    public BookingDummy(String summary, String image) {
         this.summary = summary;
         this.image = image;
     }
 
-    public Booking() {
+    public BookingDummy() {
     }
 
     public String getSummary() {
@@ -31,11 +31,11 @@ public class Booking {
         this.image = image;
     }
 
-    public List<Booking> createDummyBookings() {
-        List<Booking> bookings = new ArrayList<>();
+    public List<BookingDummy> createDummyBookings() {
+        List<BookingDummy> bookingDummies = new ArrayList<>();
         for (int i = 0; i < 33; i++) {
-            bookings.add(new Booking("Booking Summary " + i, "@drawable/ic_launcher_foreground"));
+            bookingDummies.add(new BookingDummy("BookingDummy Summary " + i, "@drawable/ic_launcher_foreground"));
         }
-        return bookings;
+        return bookingDummies;
     }
 }

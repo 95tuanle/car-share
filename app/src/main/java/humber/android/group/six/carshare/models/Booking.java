@@ -1,10 +1,10 @@
-package humber.android.group.six.carshare;
+package humber.android.group.six.carshare.models;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Car {
+public class Booking {
     @PrimaryKey(autoGenerate = true)
-    public int cid;
+    public int bid;
 }

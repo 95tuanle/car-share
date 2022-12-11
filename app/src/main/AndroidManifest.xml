@@ -13,14 +13,14 @@
         android:theme="@style/Theme.CarShare"
         tools:targetApi="31">
         <activity
-            android:name=".LoginSignUpActivity"
+            android:name=".controllers.LoginSignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".BookingConfirmationActivity"
+            android:name=".controllers.BookingConfirmationActivity"
             android:exported="false"
             android:label="Booking Confirmation">
             <meta-data
@@ -28,7 +28,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".BookingOverviewActivity"
+            android:name=".controllers.BookingOverviewActivity"
             android:exported="false"
             android:label="Booking Overview">
             <meta-data
@@ -36,7 +36,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".CarDetailsActivity"
+            android:name=".controllers.CarDetailsActivity"
             android:exported="false"
             android:label="Car Details">
             <meta-data
@@ -44,7 +44,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ResultsActivity"
+            android:name=".controllers.ResultsActivity"
             android:exported="false"
             android:label="Results">
             <meta-data
@@ -52,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SearchActivity"
+            android:name=".controllers.SearchActivity"
             android:exported="false"
             android:label="Search">
             <meta-data
@@ -60,7 +60,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".BookingHistoryActivity"
+            android:name=".controllers.BookingHistoryActivity"
             android:exported="false"
             android:label="Booking History">
             <meta-data
@@ -68,7 +68,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".controllers.LoginActivity"
             android:exported="false"
             android:label="Login">
             <meta-data
@@ -76,7 +76,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".controllers.SignUpActivity"
             android:exported="false"
             android:label="Sign Up">
             <meta-data
@@ -84,7 +84,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".controllers.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
