@@ -21,6 +21,7 @@
         android:layout_margin="33dp"
         android:contentDescription="@string/todo"
         android:src="@android:drawable/ic_menu_add"
+        app:backgroundTint="@color/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

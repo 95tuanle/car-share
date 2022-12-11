@@ -1,0 +1,24 @@
+package humber.android.group.six.carshare;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+public class LoginSignUpActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login_sign_up);
+    }
+
+    public void login(View view) {
+        this.startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    public void signUp(View view) {
+        this.startActivity(new Intent(this, SignUpActivity.class));
+    }
+}

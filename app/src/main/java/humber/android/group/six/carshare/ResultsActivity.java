@@ -15,7 +15,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.rv_car);
 
-        ResultsAdapter resultsAdapter = new ResultsAdapter(new Car().createDummyCars());
+        ResultsAdapter resultsAdapter = new ResultsAdapter(new CarDummy().createDummyCars());
 
         recyclerView.setAdapter(resultsAdapter);
 

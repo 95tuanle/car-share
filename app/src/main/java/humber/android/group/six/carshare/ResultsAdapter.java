@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ResultsAdapter  extends RecyclerView.Adapter<ResultsAdapter.ViewHolder> {
-    private final List<Car> cars;
+    private final List<CarDummy> carDummies;
 
-    public ResultsAdapter(List<Car> cars) {
-        this.cars = cars;
+    public ResultsAdapter(List<CarDummy> carDummies) {
+        this.carDummies = carDummies;
     }
 
     @NonNull
@@ -30,15 +30,15 @@ public class ResultsAdapter  extends RecyclerView.Adapter<ResultsAdapter.ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ResultsAdapter.ViewHolder holder, int position) {
-        holder.getTextView().setText(cars.get(position).getSummary());
+        holder.getTextView().setText(carDummies.get(position).getSummary());
         ImageView imageView = holder.getImageView();
         Context context = imageView.getContext();
-        imageView.setImageResource(context.getResources().getIdentifier(cars.get(position).getImage(), "drawable", context.getPackageName()));
+        imageView.setImageResource(context.getResources().getIdentifier(carDummies.get(position).getImage(), "drawable", context.getPackageName()));
     }
 
     @Override
     public int getItemCount() {
-        return cars.size();
+        return carDummies.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CarDetailsActivity">
+    tools:context=".LoginSignUpActivity">
 
     <ImageView
-        android:id="@+id/iv_car"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="33dp"
         android:background="@drawable/ic_launcher_background"
         android:contentDescription="@string/todo"
         android:src="@drawable/ic_launcher_foreground"
@@ -19,27 +17,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_car_detail"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/b_login"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/car_details"
-        app:layout_constraintTop_toBottomOf="@+id/iv_car"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:maxLines="13"
         android:layout_margin="33dp"
-        android:scrollbars="vertical"/>
+        android:text="@string/login"
+        android:textColor="#3E2723"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gl_h_50sp"
+        android:onClick="login"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="33dp"
-        android:text="@string/book"
+        android:text="@string/sign_up"
         android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_car_detail" />
+        app:layout_constraintTop_toBottomOf="@id/b_login"
+        android:onClick="signUp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_25ps"

@@ -13,6 +13,13 @@
         android:theme="@style/Theme.CarShare"
         tools:targetApi="31">
         <activity
+            android:name=".LoginSignUpActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".BookingConfirmationActivity"
             android:exported="false"
             android:label="Booking Confirmation">

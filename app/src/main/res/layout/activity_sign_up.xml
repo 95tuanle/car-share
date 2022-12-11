@@ -54,7 +54,8 @@
         android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_confirm_password" />
+        app:layout_constraintTop_toBottomOf="@id/et_confirm_password"
+        android:onClick="signUp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_25ps"
