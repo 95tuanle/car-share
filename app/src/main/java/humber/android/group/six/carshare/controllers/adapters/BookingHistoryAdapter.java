@@ -1,6 +1,6 @@
 package humber.android.group.six.carshare.controllers.adapters;
 
-import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +12,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import humber.android.group.six.carshare.BookingDummy;
+import humber.android.group.six.carshare.Converters;
+import humber.android.group.six.carshare.DownloadImageTask;
 import humber.android.group.six.carshare.R;
+import humber.android.group.six.carshare.controllers.BookingConfirmationActivity;
+import humber.android.group.six.carshare.controllers.BookingHistoryActivity;
+import humber.android.group.six.carshare.controllers.BookingOverviewActivity;
+import humber.android.group.six.carshare.daos.CarDao;
+import humber.android.group.six.carshare.models.Booking;
+import humber.android.group.six.carshare.models.Car;
 
 public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAdapter.ViewHolder>{
-    private final List<BookingDummy> bookingDummies;
+    private final List<Booking> bookings;
+    private final CarDao carDao;
+    private final BookingHistoryActivity bookingHistoryActivity;
 
     @NonNull
     @Override
@@ -29,15 +38,22 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
     @Override
     public void onBindViewHolder(@NonNull BookingHistoryAdapter.ViewHolder holder, int position) {
-        holder.getTextView().setText(bookingDummies.get(position).getSummary());
-        ImageView imageView = holder.getImageView();
-        Context context = imageView.getContext();
-        imageView.setImageResource(context.getResources().getIdentifier(bookingDummies.get(position).getImage(), "drawable", context.getPackageName()));
+        Car car = carDao.getCarByCid(bookings.get(position).cid);
+        holder.getTextView().setText(String.format("%s %s\nPickup date:\n %s\nDrop-off\n date %s", car.manufacturer, car.model, bookings.get(position).pickupDate, bookings.get(position).dropOffDate));
+        new DownloadImageTask(holder.getImageView()).execute(car.image);
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(bookingHistoryActivity, BookingConfirmationActivity.class);
+            intent.putExtra("address", bookings.get(position).address);
+            intent.putExtra("pickup", Converters.dateToTimestamp(bookings.get(position).pickupDate));
+            intent.putExtra("dropOff", Converters.dateToTimestamp(bookings.get(position).dropOffDate));
+            intent.putExtra("cid", bookings.get(position).cid);
+            bookingHistoryActivity.startActivity(intent);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return bookingDummies.size();
+        return bookings.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -60,7 +76,9 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
         }
     }
 
-    public BookingHistoryAdapter(List<BookingDummy> bookingDummies) {
-        this.bookingDummies = bookingDummies;
+    public BookingHistoryAdapter(List<Booking> bookings, CarDao carDao, BookingHistoryActivity bookingHistoryActivity) {
+        this.bookings = bookings;
+        this.carDao = carDao;
+        this.bookingHistoryActivity = bookingHistoryActivity;
     }
 }

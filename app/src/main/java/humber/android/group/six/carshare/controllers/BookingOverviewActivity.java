@@ -52,7 +52,7 @@ public class BookingOverviewActivity extends AppCompatActivity {
 
     public void confirm(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences("humber.android.group.six.carshare", MODE_PRIVATE);
-        appDatabase.bookingDao().insertBooking(new Booking(Converters.fromTimestamp(pickup), Converters.fromTimestamp(dropOff), cid, sharedPreferences.getInt("uid", -1)));
+        appDatabase.bookingDao().insertBooking(new Booking(Converters.fromTimestamp(pickup), Converters.fromTimestamp(dropOff), cid, sharedPreferences.getInt("uid", -1), true, address));
         car.isAvailable = false;
         carDao.updateCar(car);
         Toast.makeText(this, "Booking confirmed", Toast.LENGTH_LONG).show();

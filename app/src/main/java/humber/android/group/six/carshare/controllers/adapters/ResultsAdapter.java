@@ -47,7 +47,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.getTextView().setText(String.format("%s %s\nDaily rate: %s\n%s", cars.get(position).manufacturer, cars.get(position).model, cars.get(position).dailyRate, cars.get(position).availableForm.toString()));
+        holder.getTextView().setText(String.format("%s %s\nDaily rate: $%s\n%s", cars.get(position).manufacturer, cars.get(position).model, cars.get(position).dailyRate, cars.get(position).availableForm.toString()));
         new DownloadImageTask(holder.getImageView()).execute(cars.get(position).image);
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(resultsActivity, BookingOverviewActivity.class);

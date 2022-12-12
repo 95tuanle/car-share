@@ -23,4 +23,10 @@ public class MainActivity extends AppCompatActivity {
         }
         this.startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finishAffinity();
+    }
 }

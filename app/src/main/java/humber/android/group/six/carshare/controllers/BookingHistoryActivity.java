@@ -1,23 +1,28 @@
 package humber.android.group.six.carshare.controllers;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import java.util.Date;
+import java.util.List;
 
 import humber.android.group.six.carshare.AppDatabase;
-import humber.android.group.six.carshare.BookingDummy;
-import humber.android.group.six.carshare.controllers.adapters.BookingHistoryAdapter;
 import humber.android.group.six.carshare.R;
+import humber.android.group.six.carshare.controllers.adapters.BookingHistoryAdapter;
+import humber.android.group.six.carshare.daos.BookingDao;
 import humber.android.group.six.carshare.daos.CarDao;
+import humber.android.group.six.carshare.models.Booking;
 import humber.android.group.six.carshare.models.Car;
 
 public class BookingHistoryActivity extends AppCompatActivity {
+
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +30,21 @@ public class BookingHistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_booking_history);
 
         RecyclerView recyclerView = findViewById(R.id.rv_booking);
+        AppDatabase appDatabase = AppDatabase.getInstance(this);
+        CarDao carDao = appDatabase.carDao();
+        if (carDao.countCar() == 0) {
+            populateCars(carDao);
+        }
 
-        BookingHistoryAdapter bookingHistoryAdapter = new BookingHistoryAdapter(new BookingDummy().createDummyBookings());
+        BookingDao bookingDao = appDatabase.bookingDao();
+        sharedPreferences = getSharedPreferences("humber.android.group.six.carshare", MODE_PRIVATE);
+        List<Booking> bookings = bookingDao.getBookingsByUid(sharedPreferences.getInt("uid", -1));
+
+        BookingHistoryAdapter bookingHistoryAdapter = new BookingHistoryAdapter(bookings, carDao, this);
 
         recyclerView.setAdapter(bookingHistoryAdapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        CarDao carDao = AppDatabase.getInstance(this).carDao();
-        if (carDao.countCar() == 0) {
-            populateCars(carDao);
-        }
     }
 
     private void populateCars(CarDao carDao) {
@@ -63,5 +72,13 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
     public void addBooking(View view) {
         this.startActivity(new Intent(this, SearchActivity.class));
+    }
+
+    public void logout(View view) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        this.startActivity(new Intent(this, MainActivity.class));
+        this.finish();
     }
 }

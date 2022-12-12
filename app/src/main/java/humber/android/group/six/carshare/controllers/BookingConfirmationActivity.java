@@ -32,7 +32,7 @@ public class BookingConfirmationActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.tv_confirmed_booking_detail);
         textView.setMovementMethod(new ScrollingMovementMethod());
-        textView.setText(String.format("Car model: %s %s\nPickup address: %s\nYour address: %s\nDaily rate: $%s\nRating: %s\nDescription: %s\nPickup date: %s\nDrop-off date: %s", car.manufacturer, car.model, car.location, address, car.dailyRate, car.rating, car.description, Converters.fromTimestamp(pickup), Converters.fromTimestamp(dropOff)));
+        textView.setText(String.format("Car model: %s %s\nLocation: %s\nAddress: %s\nDaily rate: $%s\nRating: %s\nDescription: %s\nPickup date: %s\nDrop-off date: %s", car.manufacturer, car.model, car.location, address, car.dailyRate, car.rating, car.description, Converters.fromTimestamp(pickup), Converters.fromTimestamp(dropOff)));
         ImageView imageView = findViewById(R.id.iv_car);
         new DownloadImageTask(imageView).execute(car.image);
     }
