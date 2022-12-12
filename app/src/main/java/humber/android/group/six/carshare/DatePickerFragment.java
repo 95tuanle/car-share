@@ -28,10 +28,16 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         button.setText(this.month+1 + "/" + this.day + "/" + this.year);
     }
 
-    public Date getDate() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(year, month, day);
-        return calendar.getTime();
+    public int getYear() {
+        return year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getDay() {
+        return day;
     }
 
     @NonNull

@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".controllers.BookingOverviewActivity">
 
+    <ImageView
+        android:id="@id/iv_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gl_h_25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/todo"
+        android:padding="33dp"/>
+
     <TextView
         android:id="@+id/tv_booking_detail"
         android:layout_width="match_parent"
@@ -26,7 +37,8 @@
         android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_booking_detail" />
+        app:layout_constraintTop_toBottomOf="@id/tv_booking_detail"
+        android:onClick="confirm"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_25ps"

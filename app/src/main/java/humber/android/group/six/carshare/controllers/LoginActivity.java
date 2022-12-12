@@ -45,8 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     SharedPreferences sharedPreferences = getSharedPreferences("humber.android.group.six.carshare", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("isLoggedIn", true);
-                    editor.putString("email", email);
+                    editor.putInt("uid", user.uid);
                     editor.apply();
                     this.startActivity(new Intent(this, BookingHistoryActivity.class));
                 }

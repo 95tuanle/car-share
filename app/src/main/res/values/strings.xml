@@ -16,16 +16,8 @@
     <string name="booking_details">Car model: Ford Model T\nPickup address: CN Tower\nPickup date: Oct 30th, 2022\nDrop-off date: Nov 11th, 2022</string>
     <string name="your_bookings">Your Bookings</string>
     <string name="todo">TODO</string>
-    <string-array name="car_models_array">
-        <item>Ford Model T</item>
-        <item>Volkswagen Beetle</item>
-        <item>Porsche 911</item>
-        <item>Mercedes-Benz 300 S</item>
-        <item>Lamborghini Countach</item>
-        <item>Ferrari F40</item>
-        <item>Lamborghini Miura</item>
-        <item>Bugatti Veyron</item>
-        <item>Mclaren F1</item>
-        <item>Ferrari 250 GTO</item>
-    </string-array>
+    <string name="pickup">Pickup</string>
+    <string name="drop_off">Drop-off</string>
+    <string name="pickup_time">Pickup Time</string>
+    <string name="drop_off_time">Drop-off Time</string>
 </resources>

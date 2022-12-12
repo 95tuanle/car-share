@@ -1,5 +1,6 @@
 package humber.android.group.six.carshare.controllers.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +12,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import humber.android.group.six.carshare.Converters;
 import humber.android.group.six.carshare.DownloadImageTask;
 import humber.android.group.six.carshare.R;
+import humber.android.group.six.carshare.controllers.BookingOverviewActivity;
+import humber.android.group.six.carshare.controllers.ResultsActivity;
 import humber.android.group.six.carshare.models.Car;
 
 public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHolder> {
 
     private final List<Car> cars;
+    private final String address;
+    private final long pickup;
+    private final long dropOff;
+    private final ResultsActivity resultsActivity;
 
-    public ResultsAdapter(List<Car> cars) {
+
+    public ResultsAdapter(List<Car> cars, String address, long pickup, long dropOff, ResultsActivity resultsActivity) {
         this.cars = cars;
+        this.address = address;
+        this.pickup = pickup;
+        this.dropOff = dropOff;
+        this.resultsActivity = resultsActivity;
     }
 
     @NonNull
@@ -36,6 +49,14 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.getTextView().setText(String.format("%s %s\nDaily rate: %s\n%s", cars.get(position).manufacturer, cars.get(position).model, cars.get(position).dailyRate, cars.get(position).availableForm.toString()));
         new DownloadImageTask(holder.getImageView()).execute(cars.get(position).image);
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(resultsActivity, BookingOverviewActivity.class);
+            intent.putExtra("address", address);
+            intent.putExtra("pickup", pickup);
+            intent.putExtra("dropOff", dropOff);
+            intent.putExtra("cid", cars.get(holder.getAdapterPosition()).cid);
+            resultsActivity.startActivity(intent);
+        });
     }
 
     @Override

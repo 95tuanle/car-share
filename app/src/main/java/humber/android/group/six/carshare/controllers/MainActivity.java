@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SharedPreferences sharedPreferences = getSharedPreferences("humber.android.group.six.carshare", MODE_PRIVATE);
         Intent intent;
-        if (sharedPreferences.getBoolean("isLoggedIn", false)) {
+        if (sharedPreferences.contains("uid")) {
             intent = new Intent(this, BookingHistoryActivity.class);
         } else {
             intent = new Intent(this, LoginSignUpActivity.class);

@@ -37,14 +37,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".controllers.CarDetailsActivity"
-            android:exported="false"
-            android:label="Car Details">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".controllers.ResultsActivity"
             android:exported="false"
             android:label="Results">
