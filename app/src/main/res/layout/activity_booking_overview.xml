@@ -10,75 +10,75 @@
         android:id="@id/iv_car"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/gl_h_25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/todo"
-        android:padding="33dp"/>
+        android:padding="33dp"
+        app:layout_constraintBottom_toTopOf="@id/gl_h_25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_booking_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/booking_details"
-        app:layout_constraintTop_toBottomOf="@id/gl_h_25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:maxLines="13"
         android:layout_margin="33dp"
-        android:scrollbars="vertical"/>
+        android:maxLines="13"
+        android:scrollbars="vertical"
+        android:text="@string/booking_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gl_h_25sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="33dp"
+        android:onClick="confirm"
         android:text="@string/confirm_booking"
         android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_booking_detail"
-        android:onClick="confirm"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_booking_detail" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_25ps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_50ps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.50"/>
+        app:layout_constraintGuide_percent="0.50" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_75ps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_h_25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gl_h_25sp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_h_50sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gl_h_50sp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_h_75sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gl_h_75sp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

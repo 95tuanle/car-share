@@ -12,22 +12,22 @@ public class Booking {
     public int bid;
 
     @ColumnInfo(name = "pickup_date")
-    public Date pickupDate;
+    public final Date pickupDate;
 
     @ColumnInfo(name = "drop_off_date")
-    public Date dropOffDate;
+    public final Date dropOffDate;
 
     @ColumnInfo(name = "cid")
-    public int cid;
+    public final int cid;
 
     @ColumnInfo(name = "uid")
-    public int uid;
+    public final int uid;
 
     @ColumnInfo(name = "is_active")
-    public boolean isActive;
+    public final boolean isActive;
 
     @ColumnInfo(name = "address")
-    public String address;
+    public final String address;
 
     public Booking(Date pickupDate, Date dropOffDate, int cid, int uid, boolean isActive, String address) {
         this.pickupDate = pickupDate;

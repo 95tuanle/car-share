@@ -1,7 +1,5 @@
 package humber.android.group.six.carshare.controllers;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -9,11 +7,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import humber.android.group.six.carshare.AppDatabase;
 import humber.android.group.six.carshare.Converters;
 import humber.android.group.six.carshare.DownloadImageTask;
 import humber.android.group.six.carshare.R;
-import humber.android.group.six.carshare.daos.CarDao;
 import humber.android.group.six.carshare.models.Car;
 
 public class BookingConfirmationActivity extends AppCompatActivity {

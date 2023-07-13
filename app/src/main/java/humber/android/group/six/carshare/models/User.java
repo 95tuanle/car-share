@@ -10,13 +10,13 @@ public class User {
     public int uid;
 
     @ColumnInfo(name = "email")
-    public String email;
+    public final String email;
 
     @ColumnInfo(name = "password")
-    public String password;
+    public final String password;
 
     @ColumnInfo(name = "is_standard")
-    public boolean isStandard;
+    public final boolean isStandard;
 
     public User(String email, String password, boolean isStandard) {
         this.email = email;

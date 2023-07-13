@@ -55,6 +55,8 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onError(@NonNull Status status) {
                 Log.i(TAG, "An error occurred: " + status);
+                Toast.makeText(SearchActivity.this, "An error occurred: " + status, Toast.LENGTH_SHORT).show();
+                address = status.toString();
             }
         });
 

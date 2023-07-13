@@ -14,9 +14,9 @@ import androidx.fragment.app.DialogFragment;
 import java.util.Calendar;
 
 public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
+    private final Button button;
     private int hour;
     private int minute;
-    private final Button button;
 
     public <T extends View> TimePickerFragment(Button button) {
         final Calendar c = Calendar.getInstance();

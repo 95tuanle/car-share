@@ -1,7 +1,5 @@
 package humber.android.group.six.carshare.controllers;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import humber.android.group.six.carshare.AppDatabase;
 import humber.android.group.six.carshare.Converters;

@@ -17,15 +17,20 @@ import humber.android.group.six.carshare.DownloadImageTask;
 import humber.android.group.six.carshare.R;
 import humber.android.group.six.carshare.controllers.BookingConfirmationActivity;
 import humber.android.group.six.carshare.controllers.BookingHistoryActivity;
-import humber.android.group.six.carshare.controllers.BookingOverviewActivity;
 import humber.android.group.six.carshare.daos.CarDao;
 import humber.android.group.six.carshare.models.Booking;
 import humber.android.group.six.carshare.models.Car;
 
-public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAdapter.ViewHolder>{
+public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAdapter.ViewHolder> {
     private final List<Booking> bookings;
     private final CarDao carDao;
     private final BookingHistoryActivity bookingHistoryActivity;
+
+    public BookingHistoryAdapter(List<Booking> bookings, CarDao carDao, BookingHistoryActivity bookingHistoryActivity) {
+        this.bookings = bookings;
+        this.carDao = carDao;
+        this.bookingHistoryActivity = bookingHistoryActivity;
+    }
 
     @NonNull
     @Override
@@ -74,11 +79,5 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
         public TextView getTextView() {
             return textView;
         }
-    }
-
-    public BookingHistoryAdapter(List<Booking> bookings, CarDao carDao, BookingHistoryActivity bookingHistoryActivity) {
-        this.bookings = bookings;
-        this.carDao = carDao;
-        this.bookingHistoryActivity = bookingHistoryActivity;
     }
 }

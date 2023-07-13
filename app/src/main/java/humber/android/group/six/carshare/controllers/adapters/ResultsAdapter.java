@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import humber.android.group.six.carshare.Converters;
 import humber.android.group.six.carshare.DownloadImageTask;
 import humber.android.group.six.carshare.R;
 import humber.android.group.six.carshare.controllers.BookingOverviewActivity;

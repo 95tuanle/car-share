@@ -12,31 +12,31 @@ public class Car {
     public int cid;
 
     @ColumnInfo(name = "manufacturer")
-    public String manufacturer;
+    public final String manufacturer;
 
     @ColumnInfo(name = "model")
-    public String model;
+    public final String model;
 
     @ColumnInfo(name = "location")
-    public String location;
+    public final String location;
 
     @ColumnInfo(name = "owner")
-    public int uid;
+    public final int uid;
 
     @ColumnInfo(name = "available_form")
-    public Date availableForm;
+    public final Date availableForm;
 
     @ColumnInfo(name = "daily_rate")
-    public Double dailyRate;
+    public final Double dailyRate;
 
     @ColumnInfo(name = "rating")
-    public Double rating;
+    public final Double rating;
 
     @ColumnInfo(name = "description")
-    public String description;
+    public final String description;
 
     @ColumnInfo(name = "image")
-    public String image;
+    public final String image;
 
     @ColumnInfo(name = "is_available")
     public boolean isAvailable;

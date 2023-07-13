@@ -8,6 +8,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/f_pickup_location"
+        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="33dp"
@@ -17,14 +18,13 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gl_h_25sp"
-        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"/>
+        app:layout_constraintTop_toBottomOf="@+id/gl_h_25sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pickup"
         android:layout_margin="33dp"
+        android:text="@string/pickup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/f_pickup_location" />
 
@@ -53,8 +53,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/drop_off"
         android:layout_margin="33dp"
+        android:text="@string/drop_off"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/b_pickup_date" />
 
@@ -84,52 +84,52 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="33dp"
+        android:onClick="search"
         android:text="@string/search"
         android:textColor="#3E2723"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b_drop_off_date"
-        android:onClick="search"/>
+        app:layout_constraintTop_toBottomOf="@+id/b_drop_off_date" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_25ps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_50ps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.50"/>
+        app:layout_constraintGuide_percent="0.50" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_75ps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_h_25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gl_h_25sp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_h_50sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gl_h_50sp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_h_75sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gl_h_75sp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

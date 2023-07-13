@@ -11,13 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+    private final Button button;
     private int year;
     private int month;
     private int day;
-    private final Button button;
 
     public <T extends View> DatePickerFragment(Button button) {
         final Calendar c = Calendar.getInstance();
@@ -25,7 +24,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         this.month = c.get(Calendar.MONTH);
         this.day = c.get(Calendar.DAY_OF_MONTH);
         this.button = button;
-        button.setText(this.month+1 + "/" + this.day + "/" + this.year);
+        button.setText(this.month + 1 + "/" + this.day + "/" + this.year);
     }
 
     public int getYear() {
@@ -58,6 +57,6 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         this.year = year;
         this.month = month;
         this.day = day;
-        button.setText(this.month+1 + "/" + this.day + "/" + this.year);
+        button.setText(this.month + 1 + "/" + this.day + "/" + this.year);
     }
 }
