@@ -8,36 +8,26 @@ import java.util.Date;
 
 @Entity
 public class Car {
-    @PrimaryKey(autoGenerate = true)
-    public int cid;
-
     @ColumnInfo(name = "manufacturer")
     public final String manufacturer;
-
     @ColumnInfo(name = "model")
     public final String model;
-
     @ColumnInfo(name = "location")
     public final String location;
-
     @ColumnInfo(name = "owner")
     public final int uid;
-
     @ColumnInfo(name = "available_form")
     public final Date availableForm;
-
     @ColumnInfo(name = "daily_rate")
     public final Double dailyRate;
-
     @ColumnInfo(name = "rating")
     public final Double rating;
-
     @ColumnInfo(name = "description")
     public final String description;
-
     @ColumnInfo(name = "image")
     public final String image;
-
+    @PrimaryKey(autoGenerate = true)
+    public int cid;
     @ColumnInfo(name = "is_available")
     public boolean isAvailable;
 

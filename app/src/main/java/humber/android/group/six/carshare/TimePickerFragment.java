@@ -11,6 +11,7 @@ import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
+import java.text.MessageFormat;
 import java.util.Calendar;
 
 public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
@@ -23,7 +24,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         this.hour = c.get(Calendar.HOUR_OF_DAY);
         this.minute = c.get(Calendar.MINUTE);
         this.button = button;
-        button.setText(this.hour + ":" + this.minute);
+        button.setText(MessageFormat.format("{0}:{1}", this.hour, this.minute));
     }
 
     public int getHour() {
@@ -51,6 +52,6 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     public void onTimeSet(TimePicker timePicker, int i, int i1) {
         this.hour = i;
         this.minute = i1;
-        button.setText(this.hour + ":" + this.minute);
+        button.setText(MessageFormat.format("{0}:{1}", this.hour, this.minute));
     }
 }
